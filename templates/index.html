@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Reynolds Calculator and Plotter</h1>
+    <form method="post">
+        <input type="number" name="masse_volumique" placeholder="masse volumique" required> 
+        <input type="number" name="diametre" placeholder="diametre" required> 
+        <input type="number" name="viscosité" placeholder="viscosité" required> <br>
+        <input type="submit">
+    </form>
+
+    {% if plot_html %}
+        {{ plot_html | safe }}
+    {% endif%}
+</body>
+</html>
