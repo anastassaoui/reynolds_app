@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <title>Document</title>
 </head>
-<body>
-    <h1>Reynolds Calculator and Plotter</h1>
-    <form method="post">
-        <input type="number" name="masse_volumique" placeholder="masse volumique" required> 
-        <input type="number" name="diametre" placeholder="diametre" required> 
-        <input type="number" name="viscosité" placeholder="viscosité" required> <br>
-        <input type="submit">
-    </form>
-
-    {% if plot_html %}
-        {{ plot_html | safe }}
-    {% endif%}
+<body class="bg-grey-500">
+    <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-black text-center mb-16 mt-10">Reynolds Calculator and Plotter</h1>
+    <div class="text-center">
+        <form method="post">
+            <input class="bg-gray-300 rounded-full p-2 m-10" type="number" name="masse_volumique" placeholder="masse volumique" required> 
+            <input class="bg-gray-300 rounded-full p-2 m-10" type="number" name="diametre" placeholder="diametre" required> 
+            <input class="bg-gray-300 rounded-full p-2 m-10" type="number" name="viscosité" placeholder="viscosité" required> <br>
+            <input class="bg-gray-200 rounded-full p-2 m-10" type="submit">
+        </form>
+    </div>
+    <div class="">
+        {% if plot_html %}
+            {{ plot_html | safe }}
+        {% endif%}
+    </div>
 </body>
 </html>
