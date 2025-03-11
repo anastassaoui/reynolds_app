@@ -2,6 +2,9 @@ from flask import Flask ,render_template ,request
 import numpy as np
 import plotly.express as px
 import plotly
+import pandas as pd
+
+
 
 app = Flask(__name__)
 
@@ -25,10 +28,10 @@ def home():
 
         reynolds_val = calc_reynolds(masse_vol , vitesse ,diam,visco)
 
-        data = {
+        data = pd.DataFrame({
             "reynolds" : reynolds_val,
             "vitesse"  : vitesse
-        }
+        })
 
         fig = px.line(data, x="vitesse", y="reynolds", title='Reynolds plot vs velocity')
 
